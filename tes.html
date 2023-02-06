@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div onclick="handleMenu('satu')">menu1</div>
+    <div onclick="handleMenu('dua')">menu2</div>
+    <div onclick="handleMenu('tiga')">menu3</div>
+
+    <hr/>
+
+    <div class="item" id="menu1">isi1</div>
+    <div class="item hidden">isi2</div>
+    <div class="item hidden">isi3</div>
+
+    <script>
+        function handleMenu(mutadi) {
+            const elBaru = document.querySelectorAll(".item");
+            console.log(mutadi);
+
+            if (mutadi === "satu") {
+                elBaru.forEach((elemen, index)  => {
+                    if (index != 0){
+                        elemen.classList.add("hidden");
+                    }else {
+                        elemen.classList.remove("hidden");
+                    }
+                });
+            }else if (mutadi === "dua") {
+                elBaru.forEach((elemen, index)  => {
+                    if (index != 1){
+                        elemen.classList.add("hidden");
+                    }else {
+                        elemen.classList.remove("hidden");
+                    }
+                });
+            }else if (mutadi === "tiga") {
+                elBaru.forEach((elemen, index)  => {
+                    if (index != 2){
+                        elemen.classList.add("hidden");
+                    }else {
+                        elemen.classList.remove("hidden");
+                    }
+                });
+            }
+            // const elementMenu1 = document.getElementById("menu1").style.display = "none";
+            // return console.log(elementMenu1);
+            // const elBaru = document.querySelectorAll(".item");
+            // console.log(elBaru);
+        }
+    </script>
+</body>
+</html>
